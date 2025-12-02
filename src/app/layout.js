@@ -1,7 +1,6 @@
-import Footer from "./Components/Footer";
+import "./globals.css";
 import Header from "./Components/Header";
-
-import './css/style.css'
+import Footer from "./Components/Footer";
 
 export const metadata = {
   title: "Homepage | CarWeb",
@@ -12,9 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-      <Header/>
+        <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

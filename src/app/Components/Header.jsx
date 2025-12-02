@@ -1,75 +1,108 @@
-import React from 'react'
+"use client";
+
+import React, { useState } from "react";
 
 export default function Header() {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
-    <div>
-      
+    <header className="shadow-lg w-full sticky top-0 z-50 
+      bg-gradient-to-r from-[#0e1538] via-[#00ccff] to-[#d400d4] text-white">
 
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
-    <div class="flex flex-wrap  justify-between items-center mx-auto max-w-screen-xl p-4">
-        <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="../images/logo.png" class="h-14" alt="Flowbite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+      {/* Top Bar */}
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center p-4">
+
+        {/* Logo + Company Name */}
+        <a href="/" className="flex items-center space-x-3">
+          <img 
+            src="../images/logo.jpeg" 
+            className="h-10 w-10 rounded-full border-2 border-white shadow-md" 
+            alt="Logo" 
+          />
+          <span className="text-xl font-bold tracking-wide drop-shadow-md">
+            WebCore
+          </span>
         </a>
-        <div class="flex items-center space-x-6 rtl:space-x-reverse">
-            <a href="tel:5541251234" class="text-sm  text-gray-500 dark:text-white hover:underline">+919058596626</a>
-            <a href="#" class="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</a>
-        </div>
-    </div>
-</nav>
-<nav class="bg-gray-50 dark:bg-gray-700">
-    <div class="max-w-screen-xl px-4 py-3 mx-auto ">
-        <div id="dropdownHover" className="flex items-center justify-center mx-auto ">
-            <ul class="flex flex-row justify-between font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm "aria-labelledby="dropdownHover">
-                <li>
-                    <a href="#" class="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" aria-current="page">Home</a>
-                    
-                </li>
-                
-                
-                <li>
-                    <a href="#" class="text-gray-900 dark:text-white hover:underline">About</a>
-                </li>
-                <li>
-                    <a href="#" class="text-gray-900 dark:text-white hover:underline">Contect</a>
-                </li>
-               
-            </ul>
-        </div>
-    </div>
-</nav>
 
-    </div>
-  )
+        {/* Desktop Right */}
+        <div className="hidden md:flex items-center space-x-6">
+          <a
+            href="tel:+919058596626"
+            className="text-sm text-white/90 hover:text-yellow-300 transition font-semibold"
+          >
+            +91 90585 96626
+          </a>
+
+          <a
+            href="#"
+            className="px-4 py-2 bg-white text-black rounded-lg font-semibold 
+            hover:bg-yellow-300 transition shadow-md"
+          >
+            Login
+          </a>
+        </div>
+
+        {/* Hamburger (Mobile) */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setOpenMenu(!openMenu)}
+            className="text-white focus:outline-none"
+          >
+            {openMenu ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop Menu */}
+      <nav className="hidden md:block">
+        <ul className="flex justify-center space-x-12 py-3 
+          text-white font-medium text-lg">
+          <li><a href="/" className="hover:text-yellow-300 transition">Home</a></li>
+          <li><a href="/checkout" className="hover:text-yellow-300 transition">About</a></li>
+          <li><a href="#" className="hover:text-yellow-300 transition">Contact</a></li>
+        </ul>
+      </nav>
+
+      {/* Mobile Menu */}
+      {openMenu && (
+        <nav className="md:hidden bg-[#0e1538]/90 text-white px-6 pb-4 shadow-inner">
+          <ul className="flex flex-col space-y-4 font-medium">
+            <li><a href="/" className="hover:text-yellow-300">Home</a></li>
+            <li><a href="/checkout" className="hover:text-yellow-300">About</a></li>
+            <li><a href="#" className="hover:text-yellow-300">Contact</a></li>
+
+            <hr className="border-white/30" />
+
+            <li>
+              <a href="tel:+919058596626" className="hover:text-yellow-300">
+                +91 90585 96626
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                className="px-4 py-2 bg-white text-black rounded-lg font-semibold 
+                hover:bg-yellow-300 transition shadow-md inline-block"
+              >
+                Login
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
+    </header>
+  );
 }
-
-{/* <ul className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                     <li className="py-1" role="menu">
-                   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Account settings</a>
-                 <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support</a>
-                 <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">License</a>
-                </li>
-                </ul> */}
-
-{/* <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-</svg>
-</button>
-
-<!-- Dropdown menu -->
-<div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
-    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-      </li>
-    </ul>
-</div> */}
