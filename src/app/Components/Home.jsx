@@ -121,7 +121,7 @@ export default function Home() {
               </h1>
 
               <div className="flex gap-4 mt-10">
-                <a href="https://github.com/"
+                <a href=""
                    className="px-6 py-3 rounded-lg bg-[#24292F] hover:bg-[#333] duration-300 shadow-lg shadow-black/50">
                   GitHub
                 </a>
