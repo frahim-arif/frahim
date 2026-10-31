@@ -1,7 +1,7 @@
+
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export default function Home() {
@@ -18,7 +18,9 @@ export default function Home() {
               Welcome to <span className="text-[#6C63FF] font-bold">Web Core</span>
             </p>
 
-            <p className="text-[20px] text-[#00E5FF] tracking-wider mt-2">PORTFOLIO</p>
+            <p className="text-[20px] text-[#00E5FF] tracking-wider mt-2">
+              PORTFOLIO
+            </p>
 
             <h1 className="font-extrabold text-[45px] py-4 leading-[55px]">
               Hello, I'm <span className="text-[#6C63FF]">Frahim</span>
@@ -32,13 +34,14 @@ export default function Home() {
               <button className="px-6 py-3 bg-[#6C63FF] rounded-lg shadow-lg shadow-[#6C63FF]/40 hover:scale-105 duration-300">
                 Frontend
               </button>
+
               <button className="px-6 py-3 border border-[#6C63FF] rounded-lg hover:bg-[#6C63FF] duration-300">
                 Backend
               </button>
             </div>
           </div>
 
-          {/* RIGHT IMAGE (SMALLER NOW) */}
+          {/* RIGHT IMAGE */}
           <div className="basis-1/2 flex justify-center group">
             <Image
               src="/images/1.jpg"
@@ -70,6 +73,7 @@ export default function Home() {
                 alt={item.text}
                 className="mx-auto p-3"
               />
+
               <h1 className="text-center text-[18px] mt-4 font-semibold">
                 {item.text}
               </h1>
@@ -79,8 +83,14 @@ export default function Home() {
 
         {/* INTRODUCTION */}
         <div className="bg-[#111A3A] text-white py-10 px-8 mt-12 rounded-xl shadow-lg shadow-blue-900/40">
-          <h5 className="text-[22px] text-[#00E5FF]">Introduction</h5>
-          <h1 className="text-[#FFC300] font-extrabold text-[50px]">Overview.</h1>
+          <h5 className="text-[22px] text-[#00E5FF]">
+            Introduction
+          </h5>
+
+          <h1 className="text-[#FFC300] font-extrabold text-[50px]">
+            Overview.
+          </h1>
+
           <p className="py-4 leading-relaxed text-[18px] opacity-90">
             Full Stack Web Developer with hands-on experience in creating modern,
             scalable and responsive applications. I help businesses grow with
@@ -96,12 +106,32 @@ export default function Home() {
 
           <div className="grid md:grid-cols-5 grid-cols-2 gap-8 mt-10 px-10">
             {[
-              "scss.png","Amazon-S3.png","ec2.png","expressjs.png","formik-icon.png",
-              "git.png","material-ui.png","mongodb.png","javascript.png",
-              "mongoose.png","nodejs.png","reactjs.png","redux.png","tailwind.png","html.png",
+              "scss.png",
+              "Amazon-S3.png",
+              "ec2.png",
+              "expressjs.png",
+              "formik-icon.png",
+              "material-ui.png",
+              "mongodb.png",
+              "javascript.png",
+              "mongoose.png",
+              "nodejs.png",
+              "reactjs.png",
+              "redux.png",
+              "tailwind.png",
+              "html.png",
             ].map((img, index) => (
-              <div key={index} className="text-center hover:scale-105 duration-300">
-                <Image src={`/images/${img}`} width={90} height={90} alt={img} />
+              <div
+                key={index}
+                className="text-center hover:scale-105 duration-300"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  width={90}
+                  height={90}
+                  alt={img}
+                />
+
                 <p className="text-[18px] mt-2 opacity-80">
                   {img.replace(".png", "")}
                 </p>
@@ -115,12 +145,13 @@ export default function Home() {
           <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-12 px-8">
 
             <div>
-              <p className="text-[#00E5FF] tracking-widest">GET IN TOUCH</p>
+              <p className="text-[#00E5FF] tracking-widest">
+                GET IN TOUCH
+              </p>
+
               <h1 className="text-white text-[50px] font-extrabold leading-[55px]">
                 Contact.
               </h1>
-
-              
             </div>
 
             <div></div>
