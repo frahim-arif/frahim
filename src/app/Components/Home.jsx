@@ -7,7 +7,6 @@ import React from "react";
 export default function Home() {
   return (
     <div className="max-w-[1300px] mx-auto bg-[#0A0F29] text-white">
-
       {/* HERO SECTION */}
       <section className="lg:py-[90px] sm:py-[60px] py-[40px]">
         <div className="flex md:flex-row flex-col-reverse items-center gap-10">
