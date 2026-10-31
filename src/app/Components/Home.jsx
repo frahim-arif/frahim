@@ -120,22 +120,7 @@ export default function Home() {
                 Contact.
               </h1>
 
-              <div className="flex gap-4 mt-10">
-                {/* <a href=""
-                   className="px-6 py-3 rounded-lg bg-[#24292F] hover:bg-[#333] duration-300 shadow-lg shadow-black/50">
-                  GitHub
-                </a> */}
-
-                <a href="tel:+919058596626"
-                   className="px-6 py-3 rounded-lg bg-[#00E5FF] text-black font-bold hover:scale-105 duration-300">
-                  Phone
-                </a>
-
-                <a href="https://www.linkedin.com/in/mr-frahim-41b720333/"
-                   className="px-6 py-3 rounded-lg bg-[#0A66C2] hover:bg-[#0F7FE8] duration-300 shadow-lg shadow-blue-500/40">
-                  LinkedIn
-                </a>
-              </div>
+              
             </div>
 
             <div></div>
